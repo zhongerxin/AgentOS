@@ -1,0 +1,1962 @@
+{
+  "version": "2.14",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Codex Web Interface Replica",
+      "clip": true,
+      "width": 1920,
+      "height": 1200,
+      "fill": "$codex-bg",
+      "cornerRadius": 20,
+      "effect": {
+        "type": "shadow",
+        "shadowType": "outer",
+        "color": "#0000001f",
+        "offset": {
+          "x": 0,
+          "y": 12
+        },
+        "blur": 32
+      },
+      "children": [
+        {
+          "type": "frame",
+          "id": "q29aeC",
+          "name": "Sidebar",
+          "width": 365,
+          "height": "fill_container",
+          "fill": "$codex-sidebar",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            16,
+            18
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "UJtfu",
+              "name": "Window Controls",
+              "width": "fill_container",
+              "height": 24,
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "UwXP3",
+                  "name": "Close Light",
+                  "fill": "#FF5F57",
+                  "width": 12,
+                  "height": 12,
+                  "stroke": "#E04C45",
+                  "strokeWidth": 1
+                },
+                {
+                  "type": "ellipse",
+                  "id": "L8wPS",
+                  "name": "Minimize Light",
+                  "fill": "#FFBD2E",
+                  "width": 12,
+                  "height": 12,
+                  "stroke": "#D9A125",
+                  "strokeWidth": 1
+                },
+                {
+                  "type": "ellipse",
+                  "id": "z925W",
+                  "name": "Zoom Light",
+                  "fill": "#28C840",
+                  "width": 12,
+                  "height": 12,
+                  "stroke": "#20A934",
+                  "strokeWidth": 1
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ktl0J",
+              "name": "OS",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "z45ir2",
+                  "name": "OS Label",
+                  "fill": "$codex-text-faint",
+                  "content": "OS",
+                  "fontFamily": "$font-ui",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "OJ6xs",
+                  "name": "Main conversation",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "cornerRadius": 8,
+                  "gap": 9,
+                  "padding": [
+                    7,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "TBsFT",
+                      "name": "Main Conversation Icon",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "message-square",
+                      "library": "lucide",
+                      "fill": "$codex-black"
+                    },
+                    {
+                      "type": "text",
+                      "id": "R27YH",
+                      "name": "Main Conversation Label",
+                      "fill": "$codex-text",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Main",
+                      "fontFamily": "$font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "lopLS",
+                      "name": "Main Conversation Status",
+                      "fill": "$codex-orange",
+                      "width": 6,
+                      "height": 6
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "k6j7nq",
+              "name": "Navigation Spacer",
+              "width": "fill_container",
+              "height": 8,
+              "fill": "#FFFFFF00"
+            },
+            {
+              "type": "frame",
+              "id": "tWe9F",
+              "name": "Projects Section",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 5,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "b3DOUU",
+                  "name": "Projects Label",
+                  "fill": "$codex-text-faint",
+                  "content": "Workspace",
+                  "fontFamily": "$font-ui",
+                  "fontSize": 11,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "vWn3g",
+                  "name": "Workspace Project",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF00",
+                  "cornerRadius": 7,
+                  "gap": 9,
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "h7q8HV",
+                      "name": "Workspace Project Icon",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "folder",
+                      "library": "lucide",
+                      "fill": "$codex-text-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "b3Dmua",
+                      "name": "Workspace Project Label",
+                      "fill": "$codex-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Daily",
+                      "fontFamily": "$font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "AVQgx",
+                  "name": "Agent General Project",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF00",
+                  "cornerRadius": 7,
+                  "gap": 9,
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "Q9O3KI",
+                      "name": "Agent General Project Icon",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "folder",
+                      "library": "lucide",
+                      "fill": "$codex-text-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "bvn05",
+                      "name": "Agent General Project Label",
+                      "fill": "$codex-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "agent_general-master",
+                      "fontFamily": "$font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "ohheR",
+                  "name": "CUA Trace Project",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF00",
+                  "cornerRadius": 7,
+                  "gap": 9,
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "pFmLT",
+                      "name": "CUA Trace Project Icon",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "folder",
+                      "library": "lucide",
+                      "fill": "$codex-text-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "raomw",
+                      "name": "CUA Trace Project Label",
+                      "fill": "$codex-text-muted",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "CUA TRACE",
+                      "fontFamily": "$font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "fgk0Z",
+                  "name": "Creative Production Project",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF00",
+                  "cornerRadius": 7,
+                  "gap": 9,
+                  "padding": [
+                    6,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "j4h6oT",
+                      "name": "Creative Production Project Icon",
+                      "width": 15,
+                      "height": 15,
+                      "icon": "folder",
+                      "library": "lucide",
+                      "fill": "$codex-text-faint"
+                    },
+                    {
+                      "type": "text",
+                      "id": "HsBH3",
+                      "name": "Creative Production Project Label",
+                      "fill": "#6b6f75ff",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Creative-production",
+                      "fontFamily": "$font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "JmUe4",
+              "name": "Navigation Spacer",
+              "width": "fill_container",
+              "height": 8,
+              "fill": "#FFFFFF00"
+            },
+            {
+              "type": "frame",
+              "id": "KqyDC",
+              "name": "Primary Navigation",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 3,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "zQQK4",
+                  "name": "Search",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF00",
+                  "cornerRadius": 8,
+                  "gap": 10,
+                  "padding": [
+                    7,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "xd65R",
+                      "name": "Search Icon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "search",
+                      "library": "lucide",
+                      "fill": "$codex-text-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "THx9M",
+                      "name": "Search Label",
+                      "fill": "$codex-text-muted",
+                      "content": "Search",
+                      "fontFamily": "$font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "RJepM",
+                  "name": "Scheduled",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF00",
+                  "cornerRadius": 8,
+                  "gap": 10,
+                  "padding": [
+                    7,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "m8DHj",
+                      "name": "Scheduled Icon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "calendar-clock",
+                      "library": "lucide",
+                      "fill": "$codex-text-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "a8bFJo",
+                      "name": "Scheduled Label",
+                      "fill": "$codex-text-muted",
+                      "content": "Scheduled",
+                      "fontFamily": "$font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "FXRNy",
+                  "name": "Plugins",
+                  "width": "fill_container",
+                  "fill": "#FFFFFF00",
+                  "cornerRadius": 8,
+                  "gap": 10,
+                  "padding": [
+                    7,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon",
+                      "id": "pdQ7t",
+                      "name": "Plugins Icon",
+                      "width": 16,
+                      "height": 16,
+                      "icon": "package",
+                      "library": "lucide",
+                      "fill": "$codex-text-muted"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fDm1E",
+                      "name": "Plugins Label",
+                      "fill": "$codex-text-muted",
+                      "content": "Plugins",
+                      "fontFamily": "$font-ui",
+                      "fontSize": 13,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "g6eHfI",
+              "name": "Sidebar Filler",
+              "width": "fill_container",
+              "height": 727,
+              "fill": "#FFFFFF00"
+            },
+            {
+              "type": "frame",
+              "id": "gPigq",
+              "name": "Sidebar Footer",
+              "width": "fill_container",
+              "fill": "#FFFFFF00",
+              "cornerRadius": 8,
+              "gap": 10,
+              "padding": [
+                8,
+                10
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "b0JW9t",
+                  "name": "Footer Settings Icon",
+                  "width": 15,
+                  "height": 15,
+                  "icon": "settings",
+                  "library": "lucide",
+                  "fill": "$codex-text-faint"
+                },
+                {
+                  "type": "text",
+                  "id": "b5j8YH",
+                  "name": "Footer Label",
+                  "fill": "$codex-text-faint",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Codex",
+                  "fontFamily": "$font-ui",
+                  "fontSize": 12,
+                  "fontWeight": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ZttED",
+          "name": "Conversation Workspace",
+          "clip": true,
+          "width": "fill_container",
+          "height": "fill_container",
+          "fill": "$codex-bg",
+          "layout": "none",
+          "children": [
+            {
+              "type": "icon",
+              "id": "W1Amt",
+              "x": 1468,
+              "y": 22,
+              "name": "Window Minimize",
+              "width": 20,
+              "height": 20,
+              "icon": "panel-top-close",
+              "library": "lucide",
+              "fill": "#777B80"
+            },
+            {
+              "type": "icon",
+              "id": "J4ZIZ",
+              "x": 1514,
+              "y": 22,
+              "name": "Window Panel",
+              "width": 20,
+              "height": 20,
+              "icon": "panel-right",
+              "library": "lucide",
+              "fill": "#777B80"
+            },
+            {
+              "type": "frame",
+              "id": "iGZpV",
+              "x": 398,
+              "y": 80,
+              "name": "Left Conversation Detail",
+              "width": 760,
+              "height": 1120,
+              "fill": "#FFFFFF00",
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "OZUyI",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Conversation Message List",
+                  "width": 760,
+                  "height": 885,
+                  "fill": "#FFFFFF",
+                  "layout": "vertical",
+                  "gap": 18,
+                  "padding": [
+                    8,
+                    0,
+                    0,
+                    0
+                  ],
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "d3WOw",
+                      "name": "User Message",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 5,
+                      "alignItems": "end",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "nTv9I",
+                          "name": "User Prompt Bubble",
+                          "width": 141,
+                          "fill": "#1F2328",
+                          "cornerRadius": 12,
+                          "layout": "vertical",
+                          "gap": 7,
+                          "padding": [
+                            11,
+                            14
+                          ],
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "d8Uyp",
+                              "name": "Prompt Text",
+                              "fill": "#FFFFFF",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "今天有些什么事项",
+                              "lineHeight": 1.35,
+                              "fontFamily": "$font-ui",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "jhjPl",
+                          "name": "Processed Time",
+                          "fill": "#9AA0A6",
+                          "content": "已处理 5 秒",
+                          "lineHeight": 1.35,
+                          "fontFamily": "$font-ui",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "S7ykUI",
+                      "name": "Assistant Response",
+                      "width": "fill_container",
+                      "gap": 12,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "vAeNa",
+                          "name": "Assistant Response Body",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 10,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "fR78E",
+                              "name": "Lead Copy",
+                              "fill": "#202124",
+                              "textGrowth": "fixed-width",
+                              "width": "fill_container",
+                              "content": "Agent OS 已初始化并在运行中，当前工作区聚焦 texas-holdem-chatgpt-app。下面把需要关注的 Todo、日程和 Inbox 未读事项整理成可视化卡片，方便快速判断优先级。",
+                              "lineHeight": 1.35,
+                              "fontFamily": "$font-ui",
+                              "fontSize": 13,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "frame",
+                              "id": "EvW9Z",
+                              "name": "AgentOS Visual Summary Cards",
+                              "width": "fill_container",
+                              "fill": "#FFFFFF00",
+                              "layout": "vertical",
+                              "gap": 12,
+                              "children": [
+                                {
+                                  "type": "frame",
+                                  "id": "FhseC",
+                                  "name": "Todo Schedule Inbox Overview",
+                                  "width": "fill_container",
+                                  "fill": "#FFFFFF00",
+                                  "layout": "vertical",
+                                  "gap": 10,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "TGDPJ",
+                                      "name": "Status Summary Row",
+                                      "width": "fill_container",
+                                      "fill": "#FFFFFF00",
+                                      "gap": 8,
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "yaJJl",
+                                          "name": "Todo Card",
+                                          "width": "fill_container",
+                                          "height": 106,
+                                          "fill": "#FFFFFF",
+                                          "cornerRadius": 10,
+                                          "stroke": "#DADCE0",
+                                          "strokeWidth": 1,
+                                          "layout": "vertical",
+                                          "gap": 8,
+                                          "padding": 12,
+                                          "children": [
+                                            {
+                                              "type": "frame",
+                                              "id": "K47SJ5",
+                                              "name": "Todo Header",
+                                              "width": "fill_container",
+                                              "justifyContent": "space_between",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "n9m9Yf",
+                                                  "name": "Todo Label",
+                                                  "fill": "#6B6F76",
+                                                  "content": "Todo",
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 12,
+                                                  "fontWeight": "600"
+                                                },
+                                                {
+                                                  "type": "frame",
+                                                  "id": "L1xUQ",
+                                                  "name": "Todo Icon Box",
+                                                  "width": 26,
+                                                  "height": 26,
+                                                  "fill": "#ECFDF5",
+                                                  "cornerRadius": 7,
+                                                  "justifyContent": "center",
+                                                  "alignItems": "center",
+                                                  "children": [
+                                                    {
+                                                      "type": "icon",
+                                                      "id": "pnSVO",
+                                                      "name": "Todo Icon",
+                                                      "width": 15,
+                                                      "height": 15,
+                                                      "icon": "square-check",
+                                                      "library": "lucide",
+                                                      "fill": "#0F766E"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "jQYzI",
+                                              "name": "Todo Value",
+                                              "fill": "#202124",
+                                              "content": "5 项",
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 24,
+                                              "fontWeight": "700"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "p5YOq",
+                                              "name": "Todo Detail",
+                                              "fill": "#6B6F76",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "围绕德州扑克 MVP 与 playtest 准备",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 11,
+                                              "fontWeight": "500"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "JRhyk",
+                                          "name": "日程 Card",
+                                          "width": "fill_container",
+                                          "height": 106,
+                                          "fill": "#FFFFFF",
+                                          "cornerRadius": 10,
+                                          "stroke": "#DADCE0",
+                                          "strokeWidth": 1,
+                                          "layout": "vertical",
+                                          "gap": 8,
+                                          "padding": 12,
+                                          "children": [
+                                            {
+                                              "type": "frame",
+                                              "id": "b1TSHD",
+                                              "name": "日程 Header",
+                                              "width": "fill_container",
+                                              "justifyContent": "space_between",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "Rw9LL",
+                                                  "name": "日程 Label",
+                                                  "fill": "#6B6F76",
+                                                  "content": "日程",
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 12,
+                                                  "fontWeight": "600"
+                                                },
+                                                {
+                                                  "type": "frame",
+                                                  "id": "JuJDK",
+                                                  "name": "日程 Icon Box",
+                                                  "width": 26,
+                                                  "height": 26,
+                                                  "fill": "#F3E8FF",
+                                                  "cornerRadius": 7,
+                                                  "justifyContent": "center",
+                                                  "alignItems": "center",
+                                                  "children": [
+                                                    {
+                                                      "type": "icon",
+                                                      "id": "ypxI2",
+                                                      "name": "日程 Icon",
+                                                      "width": 15,
+                                                      "height": 15,
+                                                      "icon": "calendar-clock",
+                                                      "library": "lucide",
+                                                      "fill": "#7C3AED"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "L3EazG",
+                                              "name": "日程 Value",
+                                              "fill": "#202124",
+                                              "content": "1 个",
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 24,
+                                              "fontWeight": "700"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "z79nyc",
+                                              "name": "日程 Detail",
+                                              "fill": "#6B6F76",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "2026-06-06 22:30 与 Jamie 评审",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 11,
+                                              "fontWeight": "500"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "hrfnf",
+                                          "name": "Inbox Card",
+                                          "width": "fill_container",
+                                          "height": 106,
+                                          "fill": "#FFFFFF",
+                                          "cornerRadius": 10,
+                                          "stroke": "#DADCE0",
+                                          "strokeWidth": 1,
+                                          "layout": "vertical",
+                                          "gap": 8,
+                                          "padding": 12,
+                                          "children": [
+                                            {
+                                              "type": "frame",
+                                              "id": "R77eR",
+                                              "name": "Inbox Header",
+                                              "width": "fill_container",
+                                              "justifyContent": "space_between",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "XOtnP",
+                                                  "name": "Inbox Label",
+                                                  "fill": "#6B6F76",
+                                                  "content": "Inbox",
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 12,
+                                                  "fontWeight": "600"
+                                                },
+                                                {
+                                                  "type": "frame",
+                                                  "id": "p6b4G",
+                                                  "name": "Inbox Icon Box",
+                                                  "width": 26,
+                                                  "height": 26,
+                                                  "fill": "#FEF2F2",
+                                                  "cornerRadius": 7,
+                                                  "justifyContent": "center",
+                                                  "alignItems": "center",
+                                                  "children": [
+                                                    {
+                                                      "type": "icon",
+                                                      "id": "lZcFl",
+                                                      "name": "Inbox Icon",
+                                                      "width": 15,
+                                                      "height": 15,
+                                                      "icon": "inbox",
+                                                      "library": "lucide",
+                                                      "fill": "#DC2626"
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "QvWbs",
+                                              "name": "Inbox Value",
+                                              "fill": "#202124",
+                                              "content": "3 条",
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 24,
+                                              "fontWeight": "700"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "vIlJd",
+                                              "name": "Inbox Detail",
+                                              "fill": "#6B6F76",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "2 封未读，1 封需要回复",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 11,
+                                              "fontWeight": "500"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "ATsht",
+                                      "name": "Schedule Highlight Card",
+                                      "width": "fill_container",
+                                      "fill": "#F8FAFC",
+                                      "cornerRadius": 10,
+                                      "stroke": "#DADCE0",
+                                      "strokeWidth": 1,
+                                      "gap": 12,
+                                      "padding": [
+                                        12,
+                                        14
+                                      ],
+                                      "alignItems": "center",
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "rnimL",
+                                          "name": "Schedule Date Block",
+                                          "width": 74,
+                                          "height": 58,
+                                          "fill": "#FFFFFF",
+                                          "cornerRadius": 8,
+                                          "stroke": "#E5E7EB",
+                                          "strokeWidth": 1,
+                                          "layout": "vertical",
+                                          "gap": 2,
+                                          "justifyContent": "center",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "FBQ78",
+                                              "name": "Schedule Month",
+                                              "fill": "#7C3AED",
+                                              "content": "6月6日",
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 11,
+                                              "fontWeight": "700"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "d9dpW",
+                                              "name": "Schedule Time",
+                                              "fill": "#202124",
+                                              "content": "22:30",
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "700"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "bRmJG",
+                                          "name": "Schedule Metadata",
+                                          "width": "fill_container",
+                                          "layout": "vertical",
+                                          "gap": 4,
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "PZ9kG",
+                                              "name": "Schedule Title",
+                                              "fill": "#202124",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "Jamie 协助评审 Apps SDK 原型",
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 14,
+                                              "fontWeight": "700"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "wTAEh",
+                                              "name": "Schedule Detail",
+                                              "fill": "#6B6F76",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "22:30-23:15 Asia/Shanghai · 需要准备工具列表、table-state JSON、非法 action 处理说明",
+                                              "lineHeight": 1.3,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "500"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "v64S3G",
+                                          "name": "Schedule Status",
+                                          "fill": "#F3E8FF",
+                                          "cornerRadius": 999,
+                                          "gap": 6,
+                                          "padding": [
+                                            5,
+                                            9
+                                          ],
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "uNDYt",
+                                              "name": "Schedule Status Text",
+                                              "fill": "#7C3AED",
+                                              "content": "待准备",
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 11,
+                                              "fontWeight": "700"
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "c1b4o",
+                                      "name": "Todo Checklist Card",
+                                      "width": "fill_container",
+                                      "fill": "#FFFFFF",
+                                      "cornerRadius": 10,
+                                      "stroke": "#DADCE0",
+                                      "strokeWidth": 1,
+                                      "layout": "vertical",
+                                      "gap": 8,
+                                      "padding": [
+                                        12,
+                                        14
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "mhTes",
+                                          "name": "Todo Checklist Header",
+                                          "width": "fill_container",
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "R9f9q",
+                                              "name": "Todo Checklist Title",
+                                              "fill": "#202124",
+                                              "content": "最近 Todo / 注意事项",
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 14,
+                                              "fontWeight": "700"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "o3IznL",
+                                              "name": "Todo Checklist Meta",
+                                              "fill": "#6B6F76",
+                                              "content": "MVP 优先",
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "600"
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "GQ7BI",
+                                          "name": "Todo Item Row",
+                                          "width": "fill_container",
+                                          "gap": 9,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "ftDEI",
+                                              "name": "Todo Item Icon",
+                                              "width": 15,
+                                              "height": 15,
+                                              "icon": "circle",
+                                              "library": "lucide",
+                                              "fill": "#0F766E"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "slOCH",
+                                              "name": "Todo Item Text",
+                                              "fill": "#202124",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "定义第一个可玩的德州扑克循环",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "rCGDY",
+                                              "name": "Todo Item Badge",
+                                              "fill": "#ECFDF5",
+                                              "cornerRadius": 999,
+                                              "padding": [
+                                                3,
+                                                7
+                                              ],
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "FfLxW",
+                                                  "name": "Todo Item Badge Text",
+                                                  "fill": "#0F766E",
+                                                  "content": "进行中",
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 11,
+                                                  "fontWeight": "700"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "fxB3L",
+                                          "name": "Todo Item Row",
+                                          "width": "fill_container",
+                                          "gap": 9,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "g7qf5I",
+                                              "name": "Todo Item Icon",
+                                              "width": 15,
+                                              "height": 15,
+                                              "icon": "circle",
+                                              "library": "lucide",
+                                              "fill": "#475569"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "a63di",
+                                              "name": "Todo Item Text",
+                                              "fill": "#202124",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "起草 MCP 工具契约：start_hand / player_action / get_table_state / explain_rule",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "oTIqT",
+                                              "name": "Todo Item Badge",
+                                              "fill": "#F8FAFC",
+                                              "cornerRadius": 999,
+                                              "padding": [
+                                                3,
+                                                7
+                                              ],
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "estWH",
+                                                  "name": "Todo Item Badge Text",
+                                                  "fill": "#475569",
+                                                  "content": "待完成",
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 11,
+                                                  "fontWeight": "700"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "g5FXB",
+                                          "name": "Todo Item Row",
+                                          "width": "fill_container",
+                                          "gap": 9,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "B1vUB",
+                                              "name": "Todo Item Icon",
+                                              "width": 15,
+                                              "height": 15,
+                                              "icon": "circle",
+                                              "library": "lucide",
+                                              "fill": "#C2410C"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "pdW5l",
+                                              "name": "Todo Item Text",
+                                              "fill": "#202124",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "决定首版 bot：确定性逻辑还是轻量人格风格",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "nJ2OD",
+                                              "name": "Todo Item Badge",
+                                              "fill": "#FFF7ED",
+                                              "cornerRadius": 999,
+                                              "padding": [
+                                                3,
+                                                7
+                                              ],
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "zJlmu",
+                                                  "name": "Todo Item Badge Text",
+                                                  "fill": "#C2410C",
+                                                  "content": "待决策",
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 11,
+                                                  "fontWeight": "700"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "hmTcA",
+                                          "name": "Todo Item Row",
+                                          "width": "fill_container",
+                                          "gap": 9,
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "icon",
+                                              "id": "ZC0oo",
+                                              "name": "Todo Item Icon",
+                                              "width": 15,
+                                              "height": 15,
+                                              "icon": "circle",
+                                              "library": "lucide",
+                                              "fill": "#DC2626"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "id": "l6ioj",
+                                              "name": "Todo Item Text",
+                                              "fill": "#202124",
+                                              "textGrowth": "fixed-width",
+                                              "width": "fill_container",
+                                              "content": "重提合规 poker hero illustration，并补 delivery-note.md",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "500"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "cOnpt",
+                                              "name": "Todo Item Badge",
+                                              "fill": "#FEF2F2",
+                                              "cornerRadius": 999,
+                                              "padding": [
+                                                3,
+                                                7
+                                              ],
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "OGeBX",
+                                                  "name": "Todo Item Badge Text",
+                                                  "fill": "#DC2626",
+                                                  "content": "阻塞",
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 11,
+                                                  "fontWeight": "700"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "jh1nb",
+                                  "name": "Inbox Action Cards",
+                                  "width": "fill_container",
+                                  "fill": "#FFFFFF00",
+                                  "layout": "vertical",
+                                  "gap": 8,
+                                  "children": [
+                                    {
+                                      "type": "frame",
+                                      "id": "WpuhC",
+                                      "name": "Jamie Playtest Prep Card",
+                                      "width": "fill_container",
+                                      "fill": "#FFFFFF",
+                                      "cornerRadius": 8,
+                                      "stroke": "$codex-border",
+                                      "strokeWidth": 1,
+                                      "layout": "vertical",
+                                      "gap": 8,
+                                      "padding": [
+                                        10,
+                                        12
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "R4TSMO",
+                                          "name": "Header Row",
+                                          "width": "fill_container",
+                                          "gap": 12,
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "frame",
+                                              "id": "b6hz7",
+                                              "name": "Message Identity",
+                                              "width": "fill_container",
+                                              "layout": "vertical",
+                                              "gap": 3,
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "KpV4q",
+                                                  "name": "Title",
+                                                  "fill": "$codex-text",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "Jamie · Playtest 准备",
+                                                  "lineHeight": 1.25,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 14,
+                                                  "fontWeight": "600"
+                                                },
+                                                {
+                                                  "type": "text",
+                                                  "id": "T2FgV",
+                                                  "name": "Summary",
+                                                  "fill": "$codex-text-muted",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "未读 · playtest prep · 整理目标、问题清单和观察点",
+                                                  "lineHeight": 1.35,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 12,
+                                                  "fontWeight": "normal"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "byE8Z",
+                                              "name": "Status Badge",
+                                              "fill": "#FFF7ED",
+                                              "cornerRadius": 6,
+                                              "padding": [
+                                                4,
+                                                8
+                                              ],
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "KoU6u",
+                                                  "name": "Badge Label",
+                                                  "fill": "$codex-orange",
+                                                  "content": "未读",
+                                                  "lineHeight": 1.15,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 11,
+                                                  "fontWeight": "600"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "PUxTH",
+                                          "name": "Action Row",
+                                          "width": "fill_container",
+                                          "gap": 10,
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "m8IGwO",
+                                              "name": "Chinese Label",
+                                              "fill": "$codex-text-faint",
+                                              "content": "Inbox 行动项",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "normal"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "zo5XJ",
+                                              "name": "Primary Action",
+                                              "fill": "#FFFFFF",
+                                              "cornerRadius": 6,
+                                              "stroke": "$codex-orange",
+                                              "strokeWidth": 1,
+                                              "padding": [
+                                                5,
+                                                9
+                                              ],
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "m5LEc",
+                                                  "name": "Action Label",
+                                                  "fill": "$codex-orange",
+                                                  "content": "准备回复",
+                                                  "lineHeight": 1.15,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 12,
+                                                  "fontWeight": "600"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "nxedf",
+                                      "name": "US Teammate Apps SDK Review Card",
+                                      "width": "fill_container",
+                                      "fill": "#FFFFFF",
+                                      "cornerRadius": 8,
+                                      "stroke": "$codex-border",
+                                      "strokeWidth": 1,
+                                      "layout": "vertical",
+                                      "gap": 8,
+                                      "padding": [
+                                        10,
+                                        12
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "tZ6r4",
+                                          "name": "Header Row",
+                                          "width": "fill_container",
+                                          "gap": 12,
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "frame",
+                                              "id": "FEkZS",
+                                              "name": "Message Identity",
+                                              "width": "fill_container",
+                                              "layout": "vertical",
+                                              "gap": 3,
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "sDR4I",
+                                                  "name": "Title",
+                                                  "fill": "$codex-text",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "US Teammate · Apps SDK review",
+                                                  "lineHeight": 1.25,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 14,
+                                                  "fontWeight": "600"
+                                                },
+                                                {
+                                                  "type": "text",
+                                                  "id": "LinBF",
+                                                  "name": "Summary",
+                                                  "fill": "$codex-text-muted",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "需回复 · review · 确认 SDK 集成反馈和下一步",
+                                                  "lineHeight": 1.35,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 12,
+                                                  "fontWeight": "normal"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "uW8J1",
+                                              "name": "Status Badge",
+                                              "fill": "#EFF6FF",
+                                              "cornerRadius": 6,
+                                              "padding": [
+                                                4,
+                                                8
+                                              ],
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "GXHLf",
+                                                  "name": "Badge Label",
+                                                  "fill": "#2563EB",
+                                                  "content": "需回复",
+                                                  "lineHeight": 1.15,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 11,
+                                                  "fontWeight": "600"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "gp3am",
+                                          "name": "Action Row",
+                                          "width": "fill_container",
+                                          "gap": 10,
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "g0qG65",
+                                              "name": "Chinese Label",
+                                              "fill": "$codex-text-faint",
+                                              "content": "Inbox 行动项",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "normal"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "jgugU",
+                                              "name": "Primary Action",
+                                              "fill": "#FFFFFF",
+                                              "cornerRadius": 6,
+                                              "stroke": "#2563EB",
+                                              "strokeWidth": 1,
+                                              "padding": [
+                                                5,
+                                                9
+                                              ],
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "lOtuN",
+                                                  "name": "Action Label",
+                                                  "fill": "#2563EB",
+                                                  "content": "起草回应",
+                                                  "lineHeight": 1.15,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 12,
+                                                  "fontWeight": "600"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "frame",
+                                      "id": "v2yKAb",
+                                      "name": "Alex Product Agent MVP Suggestion Card",
+                                      "width": "fill_container",
+                                      "fill": "#FFFFFF",
+                                      "cornerRadius": 8,
+                                      "stroke": "$codex-border",
+                                      "strokeWidth": 1,
+                                      "layout": "vertical",
+                                      "gap": 8,
+                                      "padding": [
+                                        10,
+                                        12
+                                      ],
+                                      "children": [
+                                        {
+                                          "type": "frame",
+                                          "id": "Lakkt",
+                                          "name": "Header Row",
+                                          "width": "fill_container",
+                                          "gap": 12,
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "frame",
+                                              "id": "PUFee",
+                                              "name": "Message Identity",
+                                              "width": "fill_container",
+                                              "layout": "vertical",
+                                              "gap": 3,
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "V6CDH",
+                                                  "name": "Title",
+                                                  "fill": "$codex-text",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "Alex · Product Agent MVP 建议",
+                                                  "lineHeight": 1.25,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 14,
+                                                  "fontWeight": "600"
+                                                },
+                                                {
+                                                  "type": "text",
+                                                  "id": "jQirL",
+                                                  "name": "Summary",
+                                                  "fill": "$codex-text-muted",
+                                                  "textGrowth": "fixed-width",
+                                                  "width": "fill_container",
+                                                  "content": "未读 · MVP suggestion · 评估是否进入 AgentOS 迭代",
+                                                  "lineHeight": 1.35,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 12,
+                                                  "fontWeight": "normal"
+                                                }
+                                              ]
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "LyB4C",
+                                              "name": "Status Badge",
+                                              "fill": "#F5F6F7",
+                                              "cornerRadius": 6,
+                                              "padding": [
+                                                4,
+                                                8
+                                              ],
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "yRvEi",
+                                                  "name": "Badge Label",
+                                                  "fill": "$codex-text-muted",
+                                                  "content": "未读",
+                                                  "lineHeight": 1.15,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 11,
+                                                  "fontWeight": "600"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "frame",
+                                          "id": "kX3yQ",
+                                          "name": "Action Row",
+                                          "width": "fill_container",
+                                          "gap": 10,
+                                          "justifyContent": "space_between",
+                                          "alignItems": "center",
+                                          "children": [
+                                            {
+                                              "type": "text",
+                                              "id": "KKcmA",
+                                              "name": "Chinese Label",
+                                              "fill": "$codex-text-faint",
+                                              "content": "Inbox 行动项",
+                                              "lineHeight": 1.25,
+                                              "fontFamily": "$font-ui",
+                                              "fontSize": 12,
+                                              "fontWeight": "normal"
+                                            },
+                                            {
+                                              "type": "frame",
+                                              "id": "RA4Oa",
+                                              "name": "Primary Action",
+                                              "fill": "#FFFFFF",
+                                              "cornerRadius": 6,
+                                              "stroke": "$codex-black",
+                                              "strokeWidth": 1,
+                                              "padding": [
+                                                5,
+                                                9
+                                              ],
+                                              "justifyContent": "center",
+                                              "alignItems": "center",
+                                              "children": [
+                                                {
+                                                  "type": "text",
+                                                  "id": "N9tOkg",
+                                                  "name": "Action Label",
+                                                  "fill": "$codex-black",
+                                                  "content": "查看建议",
+                                                  "lineHeight": 1.15,
+                                                  "fontFamily": "$font-ui",
+                                                  "fontSize": 12,
+                                                  "fontWeight": "600"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QfGct",
+                  "x": 0,
+                  "y": 905,
+                  "name": "Conversation Composer Area",
+                  "width": 760,
+                  "height": 170,
+                  "fill": "#FFFFFF00",
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "R30PMi",
+                      "x": 0,
+                      "y": 56,
+                      "name": "Thread Input Box",
+                      "width": 760,
+                      "height": 100,
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 22,
+                      "stroke": "$codex-border",
+                      "strokeWidth": 1,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#0000001A",
+                        "offset": {
+                          "x": 0,
+                          "y": 8
+                        },
+                        "blur": 30
+                      },
+                      "layout": "vertical",
+                      "padding": [
+                        16,
+                        12,
+                        10,
+                        12
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "NH5Dx",
+                          "name": "Thread Input Placeholder",
+                          "fill": "#A7ADB4",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "今天要做些什么",
+                          "fontFamily": "$font-ui",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "FZkD0",
+                          "name": "Thread Input Toolbar",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "justifyContent": "space_between",
+                          "alignItems": "end",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "HzWDC",
+                              "name": "Thread Left Tools",
+                              "gap": 18,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "TyTBS",
+                                  "name": "Thread Add Button",
+                                  "width": 22,
+                                  "height": 22,
+                                  "icon": "plus",
+                                  "library": "lucide",
+                                  "fill": "#8C939A"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "frame",
+                              "id": "DL43M",
+                              "name": "Thread Right Tools",
+                              "gap": 10,
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "e5aFf",
+                                  "name": "Thread Loading Indicator",
+                                  "width": 16,
+                                  "height": 16,
+                                  "icon": "loader-circle",
+                                  "library": "lucide",
+                                  "fill": "#8C939A"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "I2o9Z",
+                                  "name": "Thread Quality Chevron",
+                                  "width": 14,
+                                  "height": 14,
+                                  "icon": "chevron-down",
+                                  "library": "lucide",
+                                  "fill": "#8C939A"
+                                },
+                                {
+                                  "type": "icon",
+                                  "id": "A1SUo",
+                                  "name": "Thread Microphone",
+                                  "width": 18,
+                                  "height": 18,
+                                  "icon": "mic",
+                                  "library": "lucide",
+                                  "fill": "#8C939A"
+                                },
+                                {
+                                  "type": "frame",
+                                  "id": "VTPnk",
+                                  "name": "Thread Send Button",
+                                  "width": 30,
+                                  "height": 30,
+                                  "fill": "$codex-button",
+                                  "cornerRadius": 999,
+                                  "justifyContent": "center",
+                                  "alignItems": "center",
+                                  "children": [
+                                    {
+                                      "type": "icon",
+                                      "id": "Bag54",
+                                      "name": "Thread Send Arrow",
+                                      "width": 18,
+                                      "height": 18,
+                                      "icon": "arrow-up",
+                                      "library": "lucide",
+                                      "fill": "#FFFFFF"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "codex-bg": {
+      "type": "color",
+      "value": "#FFFFFF"
+    },
+    "codex-sidebar": {
+      "type": "color",
+      "value": "#F5F6F7"
+    },
+    "codex-sidebar-soft": {
+      "type": "color",
+      "value": "#ECEFF1"
+    },
+    "codex-text": {
+      "type": "color",
+      "value": "#202124"
+    },
+    "codex-text-muted": {
+      "type": "color",
+      "value": "#6B6F76"
+    },
+    "codex-text-faint": {
+      "type": "color",
+      "value": "#9AA0A6"
+    },
+    "codex-border": {
+      "type": "color",
+      "value": "#DADCE0"
+    },
+    "codex-orange": {
+      "type": "color",
+      "value": "#F97316"
+    },
+    "codex-button": {
+      "type": "color",
+      "value": "#8B8F94"
+    },
+    "codex-black": {
+      "type": "color",
+      "value": "#1F2328"
+    },
+    "font-ui": {
+      "type": "string",
+      "value": "Inter"
+    }
+  },
+  "fileToken": "fa494a04-c654-4072-bf01-311559321a0e",
+  "fonts": [
+    {
+      "name": "Heiti TC",
+      "url": "STHeiti%20Light.ttc",
+      "weight": 300
+    }
+  ]
+}

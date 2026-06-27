@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project One Agent OS Dashboard</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #18201d;
+        --muted: #66736e;
+        --line: #dbe3df;
+        --paper: #f7f6f1;
+        --panel: #ffffff;
+        --panel-2: #eef4f0;
+        --green: #1f7a5b;
+        --blue: #285c8f;
+        --red: #ad3f36;
+        --amber: #b56b14;
+        --violet: #7055a8;
+        --shadow: 0 16px 45px rgba(36, 45, 41, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(90deg, rgba(31, 122, 91, 0.055) 1px, transparent 1px),
+          linear-gradient(rgba(40, 92, 143, 0.045) 1px, transparent 1px),
+          var(--paper);
+        background-size: 28px 28px;
+        color: var(--ink);
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 3px;
+      }
+
+      main {
+        width: min(1440px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 28px 0 48px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+        gap: 18px;
+        align-items: stretch;
+        margin-bottom: 18px;
+      }
+
+      .hero,
+      .panel,
+      .metric,
+      .rail {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        padding: 30px;
+        min-height: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 860px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(34px, 5vw, 74px);
+        line-height: 0.94;
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+
+      .hero p {
+        max-width: 850px;
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .hero-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 6px 10px;
+        border: 1px solid var(--line);
+        background: var(--panel-2);
+        color: #31423d;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .rail {
+        padding: 22px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .rail h2,
+      section h2 {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .status-line {
+        display: grid;
+        grid-template-columns: 96px 1fr;
+        gap: 12px;
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .status-line:first-of-type {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .status-line strong {
+        color: var(--ink);
+      }
+
+      .status-line span {
+        color: var(--muted);
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      .metric {
+        padding: 16px;
+        min-height: 112px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .metric small {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .metric strong {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 38px;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .metric em {
+        color: var(--muted);
+        font-size: 12px;
+        font-style: normal;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 360px;
+        gap: 18px;
+      }
+
+      .stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .panel {
+        padding: 20px;
+      }
+
+      .panel-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .panel-head a {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .item-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .item {
+        display: grid;
+        grid-template-columns: 26px 1fr;
+        gap: 10px;
+        padding: 11px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .item:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .marker {
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+        border: 2px solid currentColor;
+      }
+
+      .open {
+        color: var(--blue);
+      }
+
+      .progress {
+        color: var(--green);
+      }
+
+      .blocked {
+        color: var(--red);
+      }
+
+      .done {
+        color: var(--muted);
+      }
+
+      .item h3 {
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .item p,
+      .item code,
+      .meta {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .item code {
+        display: inline;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        background: #f0eee6;
+        padding: 1px 4px;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 0;
+      }
+
+      .event {
+        display: grid;
+        grid-template-columns: 84px 1fr;
+        gap: 14px;
+        padding: 13px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .event:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .time {
+        color: var(--green);
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .event h3 {
+        font-size: 15px;
+        line-height: 1.35;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 7px;
+        padding: 3px 7px;
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .callout {
+        border-left: 5px solid var(--red);
+        background: #fff7f4;
+      }
+
+      .callout h3 {
+        color: var(--red);
+      }
+
+      .source-list {
+        display: grid;
+        gap: 9px;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .source-list a {
+        color: var(--blue);
+      }
+
+      .code-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+        font-size: 13px;
+      }
+
+      .code-row:first-child {
+        border-top: 0;
+      }
+
+      .code-row code {
+        color: var(--ink);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      .code-row span {
+        color: var(--muted);
+        text-align: right;
+      }
+
+      footer {
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 1100px) {
+        header,
+        .layout,
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        .metrics {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 680px) {
+        main {
+          width: min(100vw - 20px, 1440px);
+          padding-top: 10px;
+        }
+
+        .hero,
+        .rail,
+        .panel {
+          padding: 16px;
+        }
+
+        .metrics {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .metric {
+          min-height: 96px;
+        }
+
+        .metric strong {
+          font-size: 30px;
+        }
+
+        .event {
+          grid-template-columns: 72px 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Project One Agent OS</p>
+            <h1>本地文件系统作战台</h1>
+            <p>
+              这个 dashboard 汇总当前 `os/` 里的任务、日程、收件箱、协作空间、记忆、定时任务和 Pi
+              自动化扩展。它是当前文件状态的静态快照，并链接回对应 Markdown / JSON 源文件。
+            </p>
+          </div>
+          <div class="hero-footer">
+            <span class="chip">Seed project: Texas Hold'em ChatGPT App</span>
+            <span class="chip">Owner: solo developer</span>
+            <span class="chip">Mode: file-first Agent OS</span>
+          </div>
+        </div>
+
+        <aside class="rail">
+          <h2>System Brief</h2>
+          <div class="status-line">
+            <strong>Focus</strong>
+            <span>把 ChatGPT Apps SDK 德州扑克游戏推进到可 playtest 的最小闭环。</span>
+          </div>
+          <div class="status-line">
+            <strong>Risk</strong>
+            <span>Hero illustration submission `holder.png` 未达标，需要重新提交独立游戏插画。</span>
+          </div>
+          <div class="status-line">
+            <strong>Next</strong>
+            <span>准备 2026-06-29 与 Jamie 的 Apps SDK prototype playtest 材料。</span>
+          </div>
+          <div class="status-line">
+            <strong>Automation</strong>
+            <span>Pi 正在通过 extensions 监听 inbox、插画提交和启动简报。</span>
+          </div>
+        </aside>
+      </header>
+
+      <section class="metrics" aria-label="System metrics">
+        <div class="metric">
+          <small>Open Todo</small>
+          <strong>12</strong>
+          <em>including one blocked item</em>
+        </div>
+        <div class="metric">
+          <small>Calendar</small>
+          <strong>12</strong>
+          <em>events across 3 days</em>
+        </div>
+        <div class="metric">
+          <small>Inbox</small>
+          <strong>4</strong>
+          <em>2 unread / 1 needs reply</em>
+        </div>
+        <div class="metric">
+          <small>Workspace</small>
+          <strong>1</strong>
+          <em>active project</em>
+        </div>
+        <div class="metric">
+          <small>Automations</small>
+          <strong>3</strong>
+          <em>Pi extensions</em>
+        </div>
+        <div class="metric">
+          <small>Cron Jobs</small>
+          <strong>2</strong>
+          <em>enabled monitors</em>
+        </div>
+      </section>
+
+      <div class="layout">
+        <div class="stack">
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Todo Snapshot</h2>
+              <a href="../todo/2026-06-27.md">source: todo/2026-06-27.md</a>
+            </div>
+            <div class="item-list">
+              <article class="item">
+                <span class="marker progress"></span>
+                <div>
+                  <h3>Define the first playable Texas Hold'em loop.</h3>
+                  <p>Current core execution thread for the ChatGPT app prototype.</p>
+                </div>
+              </article>
+              <article class="item">
+                <span class="marker open"></span>
+                <div>
+                  <h3>Draft MCP tool contracts.</h3>
+                  <p>`start_hand`, `player_action`, `get_table_state`, and `explain_rule` still need a sharper contract.</p>
+                </div>
+              </article>
+              <article class="item">
+                <span class="marker blocked"></span>
+                <div>
+                  <h3>Request revised poker hero illustration.</h3>
+                  <p>
+                    `holder.png` was rejected because it is a ChatGPT screenshot/mockup, lacks `delivery-note.md`, and is not a
+                    standalone full-bleed game illustration.
+                  </p>
+                </div>
+              </article>
+              <article class="item">
+                <span class="marker open"></span>
+                <div>
+                  <h3>Prepare Jamie's playtest packet.</h3>
+                  <p>MCP tools list, post-flop table-state JSON, illegal action handling, narration-vs-UI questions, hero-art criteria.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="grid-2">
+            <div class="panel">
+              <div class="panel-head">
+                <h2>Upcoming Calendar</h2>
+                <a href="../calendar/2026-06-29.md">source: calendar</a>
+              </div>
+              <div class="timeline">
+                <article class="event">
+                  <div class="time">06-05<br />09:00</div>
+                  <div>
+                    <h3>Poker rules edge-case pass</h3>
+                    <p class="meta">60m, research. All-in, side pots, folded players, showdown ties.</p>
+                    <span class="tag">research</span>
+                  </div>
+                </article>
+                <article class="event">
+                  <div class="time">06-05<br />10:30</div>
+                  <div>
+                    <h3>Prototype implementation block</h3>
+                    <p class="meta">120m. Stub game loop and table state serialization.</p>
+                    <span class="tag">deep work</span>
+                  </div>
+                </article>
+                <article class="event">
+                  <div class="time">06-05<br />18:30</div>
+                  <div>
+                    <h3>Climbing gym</h3>
+                    <p class="meta">120m. Personal energy and rhythm block.</p>
+                    <span class="tag">personal</span>
+                  </div>
+                </article>
+                <article class="event">
+                  <div class="time">06-06<br />22:30</div>
+                  <div>
+                    <h3>Texas Hold'em Apps SDK playtest with Jamie</h3>
+                    <p class="meta">45m. Also 07:30-08:15 Pacific Time.</p>
+                    <span class="tag">meeting</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <h2>Inbox</h2>
+                <a href="../inbox/2026-06-27/004-app-sdk-playtest-and-rules-review.md">latest mail</a>
+              </div>
+              <div class="item-list">
+                <article class="item">
+                  <span class="marker open"></span>
+                  <div>
+                    <h3>Jamie US Engineering</h3>
+                    <p>Playtest slot and prep for Texas Hold'em Apps SDK prototype. Status: unread.</p>
+                  </div>
+                </article>
+                <article class="item">
+                  <span class="marker blocked"></span>
+                  <div>
+                    <h3>US Teammate</h3>
+                    <p>Overlap window for Apps SDK review. Status: needs-reply.</p>
+                  </div>
+                </article>
+                <article class="item">
+                  <span class="marker open"></span>
+                  <div>
+                    <h3>Alex Product Agent</h3>
+                    <p>MVP framing for fast hand loop and product scope. Status: unread.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Workspace Project</h2>
+              <a href="../workspace/projects/texas-holdem-chatgpt-app/README.md">source: workspace project</a>
+            </div>
+            <div class="item-list">
+              <article class="item">
+                <span class="marker progress"></span>
+                <div>
+                  <h3>Texas Hold'em ChatGPT App</h3>
+                  <p>
+                    A lightweight Texas Hold'em game inside ChatGPT using Apps SDK. Current stage is planning and filesystem
+                    scaffolding.
+                  </p>
+                </div>
+              </article>
+              <article class="item">
+                <span class="marker open"></span>
+                <div>
+                  <h3>MVP loop</h3>
+                  <p>Start hand, show cards/table state, present legal actions, resolve bots, advance rounds, showdown, explain winner.</p>
+                </div>
+              </article>
+              <article class="item">
+                <span class="marker open"></span>
+                <div>
+                  <h3>Success criteria</h3>
+                  <p>No manual state repair, synced UI/messages, clear illegal action rejection, testable through MCP Inspector or connector tunnel.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <aside class="stack">
+          <section class="panel callout">
+            <div class="panel-head">
+              <h2>Collaboration Alert</h2>
+              <a href="../collaboration/illustrator-outsourcing-platform/tasks/2026-06-27-poker-table-hero-illustration/owner-notes.md">owner notes</a>
+            </div>
+            <h3>Hero art revision needed</h3>
+            <p class="meta">
+              The current submitted `holder.png` is a screenshot/mockup rather than the requested 1600x900 standalone
+              `poker-table-hero.png` or `.webp`.
+            </p>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Pi Extensions</h2>
+              <a href="../../.pi/extensions/">source: .pi/extensions</a>
+            </div>
+            <div class="code-row">
+              <code>inbox-auto-triage.ts</code>
+              <span>new mail -> todo/calendar/wiki/memory triage</span>
+            </div>
+            <div class="code-row">
+              <code>illustrator-submission-auto-review.ts</code>
+              <span>new artwork -> review and workspace action</span>
+            </div>
+            <div class="code-row">
+              <code>startup-system-briefing.ts</code>
+              <span>Pi launch -> system briefing</span>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Cron Jobs</h2>
+              <a href="../cron/highlightgpt-chrome-store-monitor.json">source: cron json</a>
+            </div>
+            <div class="code-row">
+              <code>0 9 * * MON</code>
+              <span>HighlightGPT Chrome Store monitor</span>
+            </div>
+            <div class="code-row">
+              <code>0 20 * * THU</code>
+              <span>US colleague sync-prep brief</span>
+            </div>
+            <p class="meta">
+              Latest HighlightGPT seed snapshot: 276 users, 5.0 rating, 2 ratings, version 1.0.5.
+            </p>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Source Files</h2>
+              <a href="../README.md">os README</a>
+            </div>
+            <div class="source-list">
+              <a href="../wiki/00-index/home.md">Wiki home</a>
+              <a href="../wiki/apps-sdk/apps-sdk-architecture.md">Apps SDK architecture</a>
+              <a href="../wiki/poker/texas-holdem-rules-summary.md">Texas Hold'em rules</a>
+              <a href="../memory/summaries/2026-06-27-seed-summary.md">Memory seed summary</a>
+              <a href="../profiles/me/profile.md">Owner profile</a>
+              <a href="../collaboration/illustrator-outsourcing-platform/README.md">Illustrator outsourcing platform</a>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <footer>
+        Generated as a static single-page snapshot from the current repository files. To refresh, update this HTML after
+        todo, calendar, inbox, workspace, cron, or collaboration files change.
+      </footer>
+    </main>
+  </body>
+</html>

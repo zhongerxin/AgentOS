@@ -1,0 +1,14 @@
+{
+  "id": "us-colleague-weekly-sync-prep",
+  "enabled": true,
+  "description": "Prepare concise update notes before late-evening Asia/Shanghai syncs with US colleagues.",
+  "schedule": {
+    "cron": "0 20 * * THU",
+    "timezone": "Asia/Shanghai"
+  },
+  "command": "npm run pi:print -- \"Prepare a weekly US-colleague sync brief from os/todo, os/wiki/product, and os/workspace/projects/texas-holdem-chatgpt-app. Include progress, blockers, asks, and next demo target.\"",
+  "outputs": [
+    "os/workspace/projects/texas-holdem-chatgpt-app/notes/weekly-sync-YYYY-MM-DD.md"
+  ]
+}
+

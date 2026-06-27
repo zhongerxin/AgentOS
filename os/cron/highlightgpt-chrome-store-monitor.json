@@ -1,0 +1,27 @@
+{
+  "id": "highlightgpt-chrome-store-monitor",
+  "enabled": true,
+  "description": "Weekly check of HighlightGPT Chrome Web Store public listing metrics.",
+  "schedule": {
+    "cron": "0 9 * * MON",
+    "timezone": "Asia/Shanghai"
+  },
+  "command": "npm run pi:print -- \"Check the HighlightGPT Chrome Web Store listing metrics and append a snapshot to os/memory/observations/highlightgpt-$(date +%F).md. Track users, rating, ratings count, version, source URL, and any scrape/manual-verification issue. URL: https://chromewebstore.google.com/detail/highlightgpt-%E2%80%93-highlight/bdjccdhalfkaiolllkadcohhieboaain?authuser=0&hl=en&pli=1\"",
+  "outputs": [
+    "os/memory/observations/highlightgpt-YYYY-MM-DD.md",
+    "os/wiki/chrome-extension/highlightgpt-monitoring.md"
+  ],
+  "last_seed_snapshot": {
+    "checked_at": "2026-06-27T00:00:00+08:00",
+    "users": 276,
+    "rating": 5.0,
+    "ratings_count": 2,
+    "version": "1.0.5",
+    "source_url": "https://chromewebstore.google.com/detail/highlightgpt-%E2%80%93-highlight/bdjccdhalfkaiolllkadcohhieboaain?authuser=0&hl=en&pli=1"
+  },
+  "failure_policy": {
+    "on_scrape_blocked": "Record failure and mark manual verification required.",
+    "on_metric_missing": "Do not overwrite previous metric; write null and add a note."
+  }
+}
+

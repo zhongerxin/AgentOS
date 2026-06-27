@@ -1,0 +1,25 @@
+{
+  "name": "project_one",
+  "version": "1.0.0",
+  "description": "Project-local Pi coding agent setup.",
+  "private": true,
+  "scripts": {
+    "pi": "pi",
+    "pi:print": "pi -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhongerxin/Project_one.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/zhongerxin/Project_one/issues"
+  },
+  "homepage": "https://github.com/zhongerxin/Project_one#readme",
+  "devDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.78.0"
+  }
+}
